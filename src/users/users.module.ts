@@ -14,6 +14,7 @@ import { UsersRepositoryImplements } from './repository/users.repository.impleme
       provide: UsersRepository,
       useClass: UsersRepositoryImplements
     }
-  ]
+  ],
+  exports: [UsersRepository]
 })
 export class UsersModule { }

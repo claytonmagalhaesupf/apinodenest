@@ -1,8 +1,10 @@
 import { CreateUserDTO } from "src/dtos/create-user-dto";
+import { GetUserDTO } from "src/dtos/get-user-dto";
 
 export abstract class UsersRepository {
-  abstract createUser(dto: CreateUserDTO): Promise<void>;
-  abstract getAllUsers(): Promise<CreateUserDTO[]>;
-  abstract updateUser(id: number, dto: CreateUserDTO): Promise<void>;
-  abstract deleteUser(id:number): Promise<void>;
+  abstract createUser(dto: CreateUserDTO);
+  abstract getAllUsers(): Promise<GetUserDTO[]>;
+  abstract updateUser(id: number, dto: CreateUserDTO);
+  abstract deleteUser(id:number);
+  abstract findByEmail(email: string); //novo metodo
 }
